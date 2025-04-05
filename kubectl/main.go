@@ -67,7 +67,7 @@ func (m *Kubectl) KubectlEks(ctx context.Context,
 		From(BaseContainerImage).
 		// WithExec([]string{"apk", "add", "--no-cache", "--update", "ca-certificates", "curl"}).
 		WithExec([]string{"apt", "update"}).
-		WithExec([]string{"apt", "install", "-y", "curl", "gettext-base"}).
+		WithExec([]string{"apt", "install", "-y", "curl", "gettext-base", "awscli"}).
 		WithExec([]string{"curl", "-sL", "-o", "/bin/kubectl", kubectl}).
 		WithExec([]string{"chmod", "+x", "/bin/kubectl"}).
 		WithExec([]string{"curl", "-sL", "-o", "/bin/aws-iam-authenticator", AWSIamAuthenticatorVersion}).
